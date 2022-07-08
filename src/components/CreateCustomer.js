@@ -44,14 +44,28 @@ const CreateCustomer = (props) => {
             [name]: value
         })
     }
-    // 💙폼 submit이벤트  -  내가 한거(선생님이 알려주심)
+    // 💙폼 submit이벤트  
     const onSubmit = (e) => {
         //form에 원래 연결된 이벤트를 제거 --> 다른 페이지로 넘어가지않음!!(이게 없으면 클릭시 새로운 페이지로 넘어가짐!)
         e.preventDefault();                     // 이렇게 해야 콘솔창에 값들이 잘 입력됨      
         console.log(formData);
+
+        //전화번호가 숫자인지 체크
+        // isNaN : NaN인지..?
+        if(isNaN(formData.c_phone)){
+            alert("전화번호는 숫자만 입력해주세요");
+            setFormData({
+                ...formData,
+                c_phone:""
+            })
+        }
         //input에 값이 있는지 체크하고
         //입력이 다 되어있으면 post전송   -- insert customer 해주면 됨!!!
-        insertCustomer();
+        if(formData.c_name !== "" && formData.c_phone !== "" &&
+        formData.c_birth !== "" && formData.c_gender !== "" &&
+        formData.c_add !== "" && formData.c_adddetail !==""){
+            insertCustomer();
+        }
     }
     // 💙axios post 전송  -- 서버로 데이터 전송하기
     function insertCustomer(){
@@ -62,10 +76,21 @@ const CreateCustomer = (props) => {
         // axios.post("경로",formData)
         // .then()
         // .catch()
-        axios.post("http://localhost:3001/customers",formData)
-        .then(result => {
-            console.log(result);
-            navigate("/")               
+
+        //내가
+        // axios.post("http://localhost:3001/customers",formData)
+        // .then(result => {
+        //     console.log(result);
+        //     navigate("/")               
+        // })
+        // .catch(e=>{
+        //     console.log(e);
+        // })
+        //선생님이 해주심!
+        axios.post("http://localhost:3001/addCustomer",formData)
+        .then(res=>{
+            console.log(res);
+            navigate('/');              //php의 Location이라고 생각!
         })
         .catch(e=>{
             console.log(e);

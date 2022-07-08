@@ -7,7 +7,8 @@ const Customer = ({customer}) => {
             <TableRow>
                 <TableCell>{customer.no}</TableCell>
                 {/* <TableCell><Link to="/detailview/1">{customer.name}</Link></TableCell> */}
-                <TableCell><Link to={`/customer/${customer.no}`}>{customer.name}</Link></TableCell>
+                {/* <TableCell><Link to={`/customer/${customer.no}`}>{customer.name}</Link></TableCell> */}
+                <TableCell><Link to={`/detailview/${customer.no}`}>{customer.name}</Link></TableCell>
                 <TableCell>{customer.phone}</TableCell>
                 <TableCell>{customer.birth}</TableCell>
                 <TableCell>{customer.gender}</TableCell>
