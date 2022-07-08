@@ -7,7 +7,8 @@ import Header from './components/Header';
 import DetailCustomer from './components/DetailCustomer';
 import { Route, Routes } from "react-router-dom";
 import CreateCustomer from './components/CreateCustomer';
-import UpdateCustomer from './components/UpdateCustomer';
+// import UpdateCustomer from './components/UpdateCustomer';
+import EditCustomer from './components/EditCustomer';
 
 // 1. 고객리스트 항목들을 여기 안에 걸로 불러오게 하기   --> 2. 이거를 빼고 mysql workbench에 넣은 데이터값(테이블 안의 값들)으로 바꿔서 넣어주자!
 // const customers = [
@@ -49,7 +50,11 @@ function App() {
         <Route path="/detailview/:no" element={ <DetailCustomer/>} />
         {/* <Route path="/customer/:no" element={ <DetailCustomer/>} /> */}
         <Route path="/write" element={<CreateCustomer/>} />
-        <Route path="/update/:no" element={<UpdateCustomer />} />
+        <Route path="/editcustomer/:no" element={<EditCustomer />} />
+        {/* <Route path="/update/:no" element={<UpdateCustomer />} /> */}
+        
+
+
         {/* 위에 적은 customers변수(배열안에 객체가 있는 구조)를 props로 전달해주기 위해 여기에 적어줌!! */}
         {/* <CustomerList customers={customers} /> */}
         {/* <DetailCustomer/> */}

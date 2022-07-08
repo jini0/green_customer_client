@@ -25,6 +25,7 @@ const DetailCustomer = (props) => {
         .catch((e)=>{
             console.log(e);
         })
+    // eslint-disable-next-line
     },[])
 
     // 삭제하기
@@ -75,7 +76,10 @@ const DetailCustomer = (props) => {
                     <TableRow>
                         <TableCell colSpan={2}>
                             <button onClick={onDelete}>삭제</button>
-                            <button><Link to={`/update/${customer[0].no}`}>수정</Link></button>
+                            {/* 내가 */}
+                            {/* <button><Link to={`/update/${customer[0].no}`}>수정</Link></button> */}
+                            <button><Link to={`/editcustomer/${customer[0].no}`}>수정</Link></button>
+                            {/* <button><Link to={`/editcustomer/${no}`}>수정</Link></button> */}
                         </TableCell>
                     </TableRow>
                 </TableBody>
