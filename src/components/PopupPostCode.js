@@ -1,5 +1,6 @@
 // https://blog.naver.com/pink_candy02/222803206842 (react 다음 주소 API사용하기) 선생님 블로그에서 그대로 가져오기!!!✔ 
 // 우리가 만든게 아니고 다음에서 제공하는 API(주소제공하는 API 이용)를 붙인거라 그대로 코드 불러오고 실행되게만 해주면 됨
+// npm install react-daum-postcode 설치하기!
 import React from 'react';
 import DaumPostcode from "react-daum-postcode";
  
