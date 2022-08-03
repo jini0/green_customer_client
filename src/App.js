@@ -12,6 +12,9 @@ import EditCustomer from './components/EditCustomer';
 // 7.18
 import CustomerContainer from './components/CustomerContainer';
 import CreateCustomerContainer from './components/CreateCustomerContainer';
+// 💕8.3 로그인 회원가입 추가 --> 나중에 비밀번호가 입력한게 일치하는지/아이디가 중복안되는지는 각자 추가해줘야함!
+import JoinForm from './components/JoinForm';
+import Login from './components/Login';
 
 // 1. 고객리스트 항목들을 여기 안에 걸로 불러오게 하기   --> 2. 이거를 빼고 mysql workbench에 넣은 데이터값(테이블 안의 값들)으로 바꿔서 넣어주자!
 // const customers = [
@@ -58,6 +61,10 @@ function App() {
         {/* <Route path="/write" element={<CreateCustomer/>} /> */}
         {/* 7.18 */}
         <Route path="/write" element={<CreateCustomerContainer/>} />
+        {/* 8.3 */}
+        <Route path="/join" element={<JoinForm/>} />
+        <Route path="/login" element={<Login/>} />
+        
 
         <Route path="/editcustomer/:no" element={<EditCustomer />} />
         {/* <Route path="/update/:no" element={<UpdateCustomer />} /> */}
