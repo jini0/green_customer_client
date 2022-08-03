@@ -6,6 +6,8 @@ import { getCookie, removeCookie } from '../util/cookie';
 
 const Header = () => {
     //https://kihyeoksong.tistory.com/101 getCookie / setCookie
+    //새로고침시 로그아웃되는 문제.. --> 초기값 isLogin을 false로 줘서 --> logincheck.js의 초기값 설정에서 isLogin: false로 줘서 그럼!
+    //https://backend-intro.vlpt.us/6/06.html
     const uname = getCookie('username');    //쿠키이름이 username인 애에 접근(쿠키에 있는 값은 uname에 담음)
     //스토어에 있는거는 다 useSelector로 접근함
     const isLogin = useSelector(state=>state.logincheck.isLogin);

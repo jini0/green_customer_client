@@ -34,7 +34,8 @@ const Login = (props) => {
                 console.log(result);
                 // let usermail = result.data.usermail;
                 // let username = result.data.username;
-                
+
+
                 //usermail에 값이 있을 때
                 if(usermail !== null && usermail !== '' && usermail !== undefined){
                     alert('로그인되었습니다.');
