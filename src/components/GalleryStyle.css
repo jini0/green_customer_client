@@ -1,0 +1,26 @@
+.imgDiv {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+.imgbox {
+    width: 150px;
+    height: 150px;
+    background: pink;
+}
+.imginput {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* 안보이게해서 눈속임? 하려고 */
+    opacity: 0;
+}
+.imgview {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}

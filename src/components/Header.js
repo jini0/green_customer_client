@@ -30,6 +30,7 @@ const Header = () => {
                         <li>{uname}님 환영!</li>
                         <li onClick={logoutClick}>로그아웃</li>
                         <li><Link to="/join">회원정보수정</Link></li>
+                        <li><Link to="/gallery">이미지등록</Link></li>
                     </>
                 }
                 { isLogin ||            // || or이라서 --> isLogin이 false라도 뒤에가 실행됨(or이라서)
@@ -38,7 +39,9 @@ const Header = () => {
                         <li><Link to="/join">회원가입</Link></li>
                     </>
                 }
-                <li>고객 검색</li>
+                {/* <li>고객 검색</li> */}
+                {/* 로그인 안해도 이미지 보기는 다 나타나도록 */}
+                <li><Link to="/gallerylist">이미지보기</Link></li>
             </ul>
         </div>
     );

@@ -15,6 +15,12 @@ import CreateCustomerContainer from './components/CreateCustomerContainer';
 // 💕8.3 로그인 회원가입 추가 --> 나중에 비밀번호가 입력한게 일치하는지/아이디가 중복안되는지는 각자 추가해줘야함!
 import JoinForm from './components/JoinForm';
 import Login from './components/Login';
+import CreateGallery from './components/CreateGallery';
+import { useDispatch } from 'react-redux';
+import { getCookie } from './util/cookie';
+import { useEffect } from 'react';
+import { setLogin } from './modules/logincheck';
+import GalleryListContainer from './components/GalleryListContainer';
 
 // 1. 고객리스트 항목들을 여기 안에 걸로 불러오게 하기   --> 2. 이거를 빼고 mysql workbench에 넣은 데이터값(테이블 안의 값들)으로 바꿔서 넣어주자!
 // const customers = [
@@ -45,6 +51,14 @@ import Login from './components/Login';
 // ]
 
 function App() {
+  // 새로고침되면 로그아웃 되는거 해결
+  const dispatch = useDispatch();
+  const uname = getCookie('username');
+  useEffect(()=>{
+    if(uname){        //uname이 있으면(로그인한거)
+      dispatch(setLogin())
+    }
+  },[])
   return (
     <div className="App">
       <Header/>
@@ -64,6 +78,9 @@ function App() {
         {/* 8.3 */}
         <Route path="/join" element={<JoinForm/>} />
         <Route path="/login" element={<Login/>} />
+        {/* 8.5 */}
+        <Route path="/gallery" element={<CreateGallery />} />
+        <Route path="/gallerylist" element={<GalleryListContainer/>} />
         
 
         <Route path="/editcustomer/:no" element={<EditCustomer />} />
